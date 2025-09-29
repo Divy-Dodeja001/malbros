@@ -19,8 +19,24 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Bootstrap CSS */}
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity=""
+          crossOrigin="anonymous"
+        />
+        <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
+        {/* Bootstrap JS */}
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          strategy="afterInteractive"
+        />
+        <script src="bower_components/aos/dist/aos.js"></script>
       </body>
     </html>
   );
