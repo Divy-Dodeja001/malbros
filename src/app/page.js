@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, FreeMode } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import CountUp from "react-countup";
@@ -16,12 +16,8 @@ const logos = [
   "/partnerLogos/maxxis.png",
   "/partnerLogos/wtb.png",
   "/partnerLogos/rockshox.png",
-  "/partnerLogos/neco.png",
-  "/partnerLogos/ralson.png",
-  "/partnerLogos/sunrace.png",
-  "/partnerLogos/microshift.png",
-  "/partnerLogos/sram.png",
-  "/partnerLogos/schwalbe.png",
+  "/partnerLogos/wtb.png",
+  "/partnerLogos/rockshox.png",
 ];
 
 export default function Home() {
@@ -34,6 +30,7 @@ export default function Home() {
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           loop={true}
+          speed={1300}
           slidesPerView={1}
           className="primarySwiper"
         >
@@ -140,25 +137,20 @@ export default function Home() {
       </div>
       <div className="my-5">
         <Swiper
-          modules={[Autoplay, FreeMode]}
+          modules={[Autoplay]}
           loop={true}
-          freeMode={true}
-          freeModeMomentum={false}
-          slidesPerView={6}
+          centeredSlides={false}
+          slidesPerView={5} // roughly 4 visible slides
           spaceBetween={40}
+          speed={6000} // higher = slower continuous motion
           autoplay={{
-            delay: 0, // important: no delay
+            delay: 1, // continuous effect
             disableOnInteraction: false,
             pauseOnMouseEnter: false,
           }}
-          speed={4000} // higher = slower continuous motion
           allowTouchMove={false}
           grabCursor={false}
           className="brand-marquee"
-          breakpoints={{
-            0: { slidesPerView: 3, spaceBetween: 10 },
-            768: { slidesPerView: 6, spaceBetween: 40 },
-          }}
         >
           {logos.map((src, i) => (
             <SwiperSlide key={i}>
@@ -249,7 +241,7 @@ export default function Home() {
             </h6>
           </div>
           <div>
-            <h3>Services Tailored for Lasting Impact</h3>
+            <h3 className="mb-4">Services Tailored for Lasting Impact</h3>
           </div>
         </div>
         <div>
@@ -349,7 +341,7 @@ export default function Home() {
             </h6>
           </div>
           <div>
-            <h3>Projects That Inspire Confidence</h3>
+            <h3 className="mb-4">Projects That Inspire Confidence</h3>
           </div>
         </div>
         <div>
@@ -361,7 +353,7 @@ export default function Home() {
               spaceBetween={16}
               breakpoints={{
                 768: {
-                  slidesPerView: 2.7,
+                  slidesPerView: 3.5,
                   spaceBetween: 25,
                   allowTouchMove: true,
                 },
@@ -443,7 +435,7 @@ export default function Home() {
           <div className="py-5 px-md-5 px-3">
             <div className="d-md-flex justify-content-between mb-4">
               <div className="col-md-6">
-                <h3>Our In-House Strength</h3>
+                <h3 className="mb-4">Our In-House Strength</h3>
                 <p>
                   At the heart of our operations is a 40,000 sq.ft.
                   state-of-the-art facility equipped with advanced machinery and
