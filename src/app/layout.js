@@ -1,14 +1,11 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import { Manrope } from "next/font/google";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const manrope = Manrope({
+  subsets: ["latin"], // choose character sets
+  variable: "--font-manrope", // optional CSS variable
+  weight: ["400", "500", "600", "700"], // pick the weights you need
 });
 
 export const metadata = {
@@ -29,7 +26,7 @@ export default function RootLayout({ children }) {
         />
         <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${manrope.variable}`}>
         {children}
         {/* Bootstrap JS */}
         <script
