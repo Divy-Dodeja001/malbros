@@ -79,3 +79,25 @@ a {
 .brand-marquee .swiper-wrapper {
   transition-timing-function: linear !important;
 }
+
+.divider {
+  width: 1px;
+  background-color: black;
+  height: -webkit-fill-available;
+}
+
+.counter {
+  font-size: 3.5em;
+}
+
+@media screen and (max-width: 1080px) {
+  .counter {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .counter {
+    font-size: 1.3em;
+  }
+}

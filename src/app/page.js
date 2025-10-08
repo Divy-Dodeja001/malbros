@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import styles from "./page.module.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -9,6 +8,8 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
+import { Icon } from "@iconify/react";
 
 const logos = [
   "/partnerLogos/shimano.png",
@@ -21,6 +22,10 @@ const logos = [
 ];
 
 export default function Home() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.8,
+  });
   return (
     <div className={styles.page}>
       <Header />
@@ -135,12 +140,39 @@ export default function Home() {
           </SwiperSlide>
         </Swiper>
       </div>
-      <div className="my-5">
+      <div className="my-5 py-md-3">
+        <div
+          class="d-flex align-items-center text-center justify-content-between border-top border-bottom border-dark"
+          ref={ref}
+        >
+          <div class="p-md-5 p-4 w-100">
+            <h4 className="counter">
+              {inView && <CountUp end={17} duration={3} />}+
+            </h4>
+            <p className="m-0">years of experience</p>
+          </div>
+          <div class="divider"></div>
+          <div class="p-md-5 p-4  w-100">
+            <h4 className="counter">
+              {inView && <CountUp end={100} duration={3} />}+
+            </h4>
+            <p className="m-0">projects delivered</p>
+          </div>
+          <div class="divider"></div>
+          <div class="p-md-5 p-4 w-100">
+            <h4 className="counter">
+              {inView && <CountUp end={40} duration={3} />}K+
+            </h4>
+            <p className="m-0">sq. ft. facility</p>
+          </div>
+        </div>
+      </div>
+      <div className="my-5 py-4">
         <Swiper
           modules={[Autoplay]}
           loop={true}
           centeredSlides={false}
-          slidesPerView={5} // roughly 4 visible slides
+          slidesPerView={3} // roughly 4 visible slides
           spaceBetween={40}
           speed={6000} // higher = slower continuous motion
           autoplay={{
@@ -151,6 +183,11 @@ export default function Home() {
           allowTouchMove={false}
           grabCursor={false}
           className="brand-marquee"
+          breakpoints={{
+            768: {
+              slidesPerView: 5,
+            },
+          }}
         >
           {logos.map((src, i) => (
             <SwiperSlide key={i}>
@@ -347,8 +384,11 @@ export default function Home() {
         <div>
           <div>
             <Swiper
-              modules={[Pagination]}
+              modules={[Autoplay, Pagination]}
+              autoplay={{ delay: 2000, disableOnInteraction: false }}
               pagination={{ clickable: true }}
+              loop={true}
+              speed={1300}
               slidesPerView={1.2}
               spaceBetween={16}
               breakpoints={{
@@ -364,7 +404,20 @@ export default function Home() {
               <SwiperSlide className="pb-5">
                 <div className="mb-3">
                   <img
-                    src="/services/fall-ceiling.jpg"
+                    src="/projects/DLFCAmelias.jpg"
+                    alt="hero-fold"
+                    className="w-100 rounded-2"
+                    style={{ height: "auto", objectFit: "cover" }}
+                  />
+                </div>
+                <div>
+                  <p className="mb-2 primary-color">DLF Camellias</p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="pb-5">
+                <div className="mb-3">
+                  <img
+                    src="/projects/LemonTreeKolkata.jpg"
                     alt="hero-fold"
                     className="w-100 rounded-2"
                     style={{ height: "auto", objectFit: "cover" }}
@@ -372,35 +425,14 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="mb-2 primary-color">
-                    False Ceilings, Partitions & Panelling
-                  </p>
-                  <p className="mb-0">
-                    Structural elements that shape how a space looks and feels,
-                    executed for durability and precision.
+                    Lemon Tree Premier, Kolkata
                   </p>
                 </div>
               </SwiperSlide>
               <SwiperSlide className="pb-5">
                 <div className="mb-3">
                   <img
-                    src="/services/furniture.jpg"
-                    alt="hero-fold"
-                    className="w-100 rounded-2"
-                    style={{ height: "auto", objectFit: "cover" }}
-                  />
-                </div>
-                <div>
-                  <p className="mb-2 primary-color">Bespoke Loose Furniture</p>
-                  <p className="mb-0">
-                    Custom-built, high-quality furniture designed to fit luxury
-                    spaces perfectly.
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="pb-5">
-                <div className="mb-3">
-                  <img
-                    src="/services/interior-solutions.jpg"
+                    src="/projects/KeysHotelDehradun.jpg"
                     alt="hero-fold"
                     className="w-100 rounded-2"
                     style={{ height: "auto", objectFit: "cover" }}
@@ -408,12 +440,37 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="mb-2 primary-color">
-                    Turnkey Interior Solutions
+                    Keys Prima Hotels India, Dehradun
                   </p>
-                  <p className="mb-0">
-                    Project delivery from design to execution, ensuring a
-                    seamless process and timely completion without compromising
-                    on quality.
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="pb-5">
+                <div className="mb-3">
+                  <img
+                    src="/projects/AurikaUdaipur.jpg"
+                    alt="hero-fold"
+                    className="w-100 rounded-2"
+                    style={{ height: "auto", objectFit: "cover" }}
+                  />
+                </div>
+                <div>
+                  <p className="mb-2 primary-color">
+                    Aurika, Udaipur – Luxury by Lemon Tree Hotels
+                  </p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="pb-5">
+                <div className="mb-3">
+                  <img
+                    src="/projects/LemonTreeMumbai.jpg"
+                    alt="hero-fold"
+                    className="w-100 rounded-2"
+                    style={{ height: "auto", objectFit: "cover" }}
+                  />
+                </div>
+                <div>
+                  <p className="mb-2 primary-color">
+                    Lemon Tree Premier, Mumbai
                   </p>
                 </div>
               </SwiperSlide>
@@ -532,27 +589,29 @@ export default function Home() {
                 <h3 className="text-center">The People Behind Malbros</h3>
               </div>
             </div>
-            <div className="d-flex justify-content-center">
+            <div className="d-md-flex justify-content-center">
               <div className="col-md-9">
                 <Swiper
-                  slidesPerView={2}
+                  slidesPerView={1}
+                  modules={[Pagination]}
+                  pagination={{ clickable: true }} // default for mobile
                   spaceBetween={12}
+                  allowTouchMove={true} // swiping enabled on mobile
                   breakpoints={{
                     768: {
                       slidesPerView: 2,
                       spaceBetween: 35,
-                      allowTouchMove: false, // disable dragging/swiping on desktop
+                      allowTouchMove: false, // disable swiping on tablet/desktop
                     },
                   }}
-                  allowTouchMove={true} // enabled for mobile by default
-                  className="secondarySwiper"
+                  className="secondarySwiper pb-5"
                 >
-                  <SwiperSlide className="">
-                    <div className="mb-3">
+                  <SwiperSlide>
+                    <div className="mb-3 d-flex justify-content-center">
                       <img
                         src="/founders/Rajjat.jpg"
                         alt="in-house-strength"
-                        className="img-fluid rounded-2"
+                        className="w-75 rounded-2"
                       />
                     </div>
                     <div>
@@ -571,12 +630,13 @@ export default function Home() {
                       </p>
                     </div>
                   </SwiperSlide>
-                  <SwiperSlide className="">
-                    <div className="mb-3">
+
+                  <SwiperSlide>
+                    <div className="mb-3 d-flex justify-content-center">
                       <img
                         src="/founders/Aakshat.jpg"
                         alt="in-house-strength"
-                        className="img-fluid rounded-2"
+                        className="w-75 rounded-2"
                       />
                     </div>
                     <div>
@@ -599,6 +659,125 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="my-5 py-md-3 px-md-5 px-3">
+        <div
+          className="d-flex align-items-center justify-content-center mb-4"
+          style={{ gap: "0.7em" }}
+        >
+          <div
+            className="rounded-5 m-0"
+            style={{
+              width: "12px",
+              height: "12px",
+              backgroundColor: "#E5AA00",
+            }}
+          ></div>
+          <h6
+            className="text-uppercase text-muted m-0 text-center"
+            style={{ letterSpacing: "0.2em" }}
+          >
+            Testimonials
+          </h6>
+        </div>
+        <div className="container">
+          <Swiper
+            slidesPerView={1}
+            modules={[Autoplay, Pagination]}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            loop={true}
+            speed={1300}
+            spaceBetween={24}
+            allowTouchMove={true} // swiping enabled on mobile
+            className="secondarySwiper pb-5"
+          >
+            <SwiperSlide>
+              <div className="border rounded-3 position-relative p-3 p-md-5 text-center">
+                <div
+                  className="position-absolute"
+                  style={{ top: "6%", left: "5%" }}
+                >
+                  <Icon
+                    icon="fa-solid:quote-left"
+                    style={{ width: "24px", height: "24px" }}
+                  />
+                </div>
+                <div className="d-flex justify-content-center">
+                  <div className="col-10">
+                    <p className="my-2 d-flex justify-content-center mb-3">
+                      Working with Malbros was seamless from start to finish.
+                      Their team delivered our luxury hotel interiors with
+                      unmatched precision and attention to detail. Guests still
+                      compliment the ambience every day.
+                    </p>
+                    <div className="d-flex justify-content-md-end">
+                      <small className="fw-bold">
+                        — General Manager, Aurika Hotels
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="border rounded-3 position-relative p-3 p-md-5 text-center">
+                <div
+                  className="position-absolute"
+                  style={{ top: "6%", left: "5%" }}
+                >
+                  <Icon
+                    icon="fa-solid:quote-left"
+                    style={{ width: "24px", height: "24px" }}
+                  />
+                </div>
+                <div className="d-flex justify-content-center">
+                  <div className="col-10">
+                    <p className="my-2 d-flex justify-content-center mb-3">
+                      Working with Malbros was seamless from start to finish.
+                      Their team delivered our luxury hotel interiors with
+                      unmatched precision and attention to detail. Guests still
+                      compliment the ambience every day.
+                    </p>
+                    <div className="d-flex justify-content-md-end">
+                      <small className="fw-bold">
+                        — General Manager, Aurika Hotels
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="border rounded-3 position-relative p-3 p-md-5 text-center">
+                <div
+                  className="position-absolute"
+                  style={{ top: "6%", left: "5%" }}
+                >
+                  <Icon
+                    icon="fa-solid:quote-left"
+                    style={{ width: "24px", height: "24px" }}
+                  />
+                </div>
+                <div className="d-flex justify-content-center">
+                  <div className="col-10">
+                    <p className="my-2 d-flex justify-content-center mb-3">
+                      Working with Malbros was seamless from start to finish.
+                      Their team delivered our luxury hotel interiors with
+                      unmatched precision and attention to detail. Guests still
+                      compliment the ambience every day.
+                    </p>
+                    <div className="d-flex justify-content-md-end">
+                      <small className="fw-bold">
+                        — General Manager, Aurika Hotels
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
       <Footer />
