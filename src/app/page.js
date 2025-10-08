@@ -24,7 +24,7 @@ const logos = [
 export default function Home() {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.8,
+    threshold: 0.5,
   });
   return (
     <div className={styles.page}>
@@ -300,7 +300,7 @@ export default function Home() {
                 <div className="mb-3">
                   <img
                     src="/services/fall-ceiling.jpg"
-                    alt="hero-fold"
+                    alt="services"
                     className="w-100 rounded-2"
                     style={{ height: "auto", objectFit: "cover" }}
                   />
@@ -319,7 +319,7 @@ export default function Home() {
                 <div className="mb-3">
                   <img
                     src="/services/furniture.jpg"
-                    alt="hero-fold"
+                    alt="services"
                     className="w-100 rounded-2"
                     style={{ height: "auto", objectFit: "cover" }}
                   />
@@ -336,7 +336,7 @@ export default function Home() {
                 <div className="mb-3">
                   <img
                     src="/services/interior-solutions.jpg"
-                    alt="hero-fold"
+                    alt="services"
                     className="w-100 rounded-2"
                     style={{ height: "auto", objectFit: "cover" }}
                   />
@@ -404,8 +404,23 @@ export default function Home() {
               <SwiperSlide className="pb-5">
                 <div className="mb-3">
                   <img
+                    src="/projects/LemonTreeHotelsDIALLounge&Banquet.jpg"
+                    alt="projects"
+                    className="w-100 rounded-2"
+                    style={{ height: "auto", objectFit: "cover" }}
+                  />
+                </div>
+                <div>
+                  <p className="mb-2 primary-color">
+                    Lemon Tree Hotels - DIAL Lounge & Banquet
+                  </p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="pb-5">
+                <div className="mb-3">
+                  <img
                     src="/projects/DLFCamelias.jpg"
-                    alt="hero-fold"
+                    alt="projects"
                     className="w-100 rounded-2"
                     style={{ height: "auto", objectFit: "cover" }}
                   />
@@ -418,7 +433,7 @@ export default function Home() {
                 <div className="mb-3">
                   <img
                     src="/projects/LemonTreeKolkata.jpg"
-                    alt="hero-fold"
+                    alt="projects"
                     className="w-100 rounded-2"
                     style={{ height: "auto", objectFit: "cover" }}
                   />
@@ -433,7 +448,7 @@ export default function Home() {
                 <div className="mb-3">
                   <img
                     src="/projects/KeysHotelDehradun.jpg"
-                    alt="hero-fold"
+                    alt="projects"
                     className="w-100 rounded-2"
                     style={{ height: "auto", objectFit: "cover" }}
                   />
@@ -448,7 +463,7 @@ export default function Home() {
                 <div className="mb-3">
                   <img
                     src="/projects/AurikaUdaipur.jpg"
-                    alt="hero-fold"
+                    alt="projects"
                     className="w-100 rounded-2"
                     style={{ height: "auto", objectFit: "cover" }}
                   />
@@ -462,8 +477,21 @@ export default function Home() {
               <SwiperSlide className="pb-5">
                 <div className="mb-3">
                   <img
+                    src="/projects/AristaAmbition.jpg"
+                    alt="projects"
+                    className="w-100 rounded-2"
+                    style={{ height: "auto", objectFit: "cover" }}
+                  />
+                </div>
+                <div>
+                  <p className="mb-2 primary-color">Arista by Ambition</p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="pb-5">
+                <div className="mb-3">
+                  <img
                     src="/projects/LemonTreeMumbai.jpg"
-                    alt="hero-fold"
+                    alt="projects"
                     className="w-100 rounded-2"
                     style={{ height: "auto", objectFit: "cover" }}
                   />
@@ -610,7 +638,7 @@ export default function Home() {
                     <div className="mb-3 d-flex justify-content-center">
                       <img
                         src="/founders/Rajjat.jpg"
-                        alt="in-house-strength"
+                        alt="founder"
                         className="w-75 rounded-2"
                       />
                     </div>
@@ -635,7 +663,7 @@ export default function Home() {
                     <div className="mb-3 d-flex justify-content-center">
                       <img
                         src="/founders/Aakshat.jpg"
-                        alt="in-house-strength"
+                        alt="director"
                         className="w-75 rounded-2"
                       />
                     </div>
