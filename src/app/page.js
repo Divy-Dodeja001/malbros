@@ -142,24 +142,24 @@ export default function Home() {
       </div>
       <div className="my-5 py-md-3">
         <div
-          class="d-flex align-items-center text-center justify-content-between border-top border-bottom border-dark"
+          className="d-flex align-items-center text-center justify-content-between border-top border-bottom border-dark"
           ref={ref}
         >
-          <div class="p-md-5 p-4 w-100">
+          <div className="p-md-5 p-4 w-100">
             <h4 className="counter">
               {inView && <CountUp end={17} duration={3} />}+
             </h4>
             <p className="m-0">years of experience</p>
           </div>
-          <div class="divider"></div>
-          <div class="p-md-5 p-4  w-100">
+          <div className="divider"></div>
+          <div className="p-md-5 p-4  w-100">
             <h4 className="counter">
               {inView && <CountUp end={100} duration={3} />}+
             </h4>
             <p className="m-0">projects delivered</p>
           </div>
-          <div class="divider"></div>
-          <div class="p-md-5 p-4 w-100">
+          <div className="divider"></div>
+          <div className="p-md-5 p-4 w-100">
             <h4 className="counter">
               {inView && <CountUp end={40} duration={3} />}K+
             </h4>
@@ -404,7 +404,7 @@ export default function Home() {
               <SwiperSlide className="pb-5">
                 <div className="mb-3">
                   <img
-                    src="/projects/DLFCAmelias.jpg"
+                    src="/projects/DLFCamelias.jpg"
                     alt="hero-fold"
                     className="w-100 rounded-2"
                     style={{ height: "auto", objectFit: "cover" }}
