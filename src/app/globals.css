@@ -2,11 +2,30 @@
   background-color: #e5aa00;
   color: white;
   padding: 10px;
+  border: none;
+  border-radius: 25px;
+  padding: 9px 25px;
+  border: 1px solid #e5aa00;
 }
 
 .primary-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.secondary-button {
   background-color: black;
   color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  padding: 9px 25px;
+  border: 1px solid black;
+}
+
+.secondary-button:hover {
+  background-color: white;
+  color: black;
 }
 
 .primary-color {
@@ -100,4 +119,185 @@ a {
   .counter {
     font-size: 1.3em;
   }
+}
+
+.services-section {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #fff8e1 35%, #f8f1dc 100%);
+  overflow: hidden;
+}
+
+.services-heading {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+
+  background: linear-gradient(90deg, #3b3b3b 0%, #caa24d 45%, #8f6b2e 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 16px;
+}
+
+/* ===== Leadership Section (Modern, subtle, premium) ===== */
+.leadership-section {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #f7f4ef 0%, #ffffff 65%);
+}
+
+/* very subtle texture/noise feel using a soft radial */
+.leadership-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      800px 400px at 50% 0%,
+      rgba(229, 170, 0, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      600px 300px at 10% 40%,
+      rgba(0, 0, 0, 0.03),
+      transparent 60%
+    ),
+    radial-gradient(
+      700px 350px at 90% 60%,
+      rgba(0, 0, 0, 0.02),
+      transparent 60%
+    );
+  pointer-events: none;
+}
+
+.leadership-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Swiper spacing */
+.leadership-swiper {
+  padding-bottom: 40px !important;
+}
+
+/* Card */
+.leader-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 18px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(0);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* small hover lift only on desktop */
+@media (min-width: 992px) {
+  .leader-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 26px 55px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* Image area */
+.leader-media {
+  position: relative;
+  padding: 22px 22px 0;
+}
+
+/* portrait */
+.leader-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Content */
+.leader-body {
+  padding: 18px 22px 24px;
+}
+
+.leader-name {
+  margin: 0 0 6px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: rgba(0, 0, 0, 0.82);
+}
+
+/* role */
+.leader-role {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* bio */
+.leader-bio {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.68);
+  line-height: 1.65;
+  font-size: 15px;
+}
+
+/* Pagination subtle + on brand */
+.leadership-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  opacity: 0.35;
+}
+
+.leadership-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #e5aa00;
+}
+
+/* Mobile adjustments */
+@media (max-width: 575px) {
+  .leadership-section {
+    border-radius: 14px;
+  }
+  .leader-img {
+    height: 240px;
+  }
+}
+
+.project-card {
+  cursor: pointer;
+  transform: translateY(0);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+@media (min-width: 992px) {
+  .project-card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.form-control, .form-select {
+  color: grey !important;
+  background-color: transparent !important;
+  border: 1px solid grey !important;
+}
+
+.form-control::placeholder {
+  color: grey !important;
+}
+
+.btn-close {
+  --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") !important;
 }

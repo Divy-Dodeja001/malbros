@@ -10,6 +10,10 @@ import "swiper/css/pagination";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { Icon } from "@iconify/react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import { useState } from "react";
+import ContactFormModal from "./components/ContactFormModal";
 
 const logos = [
   "/partnerLogos/shimano.png",
@@ -21,14 +25,84 @@ const logos = [
   "/partnerLogos/rockshox.png",
 ];
 
+const ALL_PROJECT_IMAGES = [
+  "/projects/LemonTreeHotelsDIALLounge&Banquet.jpg",
+  "/projects/DLFCamelias.jpg",
+  "/projects/LemonTreeKolkata.jpg",
+  "/projects/KeysHotelDehradun.jpg",
+  "/projects/AurikaUdaipur.jpg",
+  "/projects/AristaAmbition.jpg",
+  "/projects/LemonTreeMumbai.jpg",
+];
+
+const PROJECTS_DATA = [
+  {
+    id: "lemon-tree-dial",
+    title: "Lemon Tree Hotels – DIAL Lounge & Banquet",
+    cover: "/projects/LemonTreeHotelsDIALLounge&Banquet.jpg",
+    gallery: ALL_PROJECT_IMAGES,
+  },
+
+  {
+    id: "dlf-camellias",
+    title: "DLF Camellias",
+    cover: "/projects/DLFCamelias.jpg",
+    gallery: ALL_PROJECT_IMAGES,
+  },
+
+  {
+    id: "lemon-tree-kolkata",
+    title: "Lemon Tree Premier, Kolkata",
+    cover: "/projects/LemonTreeKolkata.jpg",
+    gallery: ALL_PROJECT_IMAGES,
+  },
+
+  {
+    id: "keys-prima-dehradun",
+    title: "Keys Prima Hotels India, Dehradun",
+    cover: "/projects/KeysHotelDehradun.jpg",
+    gallery: ALL_PROJECT_IMAGES,
+  },
+
+  {
+    id: "aurika-udaipur",
+    title: "Aurika, Udaipur – Luxury by Lemon Tree Hotels",
+    cover: "/projects/AurikaUdaipur.jpg",
+    gallery: ALL_PROJECT_IMAGES,
+  },
+
+  {
+    id: "arista-ambition",
+    title: "Arista by Ambition",
+    cover: "/projects/AristaAmbition.jpg",
+    gallery: ALL_PROJECT_IMAGES,
+  },
+
+  {
+    id: "lemon-tree-mumbai",
+    title: "Lemon Tree Premier, Mumbai",
+    cover: "/projects/LemonTreeMumbai.jpg",
+    gallery: ALL_PROJECT_IMAGES,
+  },
+];
+
 export default function Home() {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.5,
   });
+  const [modalData, setModalData] = useState({
+    isJob: false, // ✅ IMPORTANT
+    source: "",
+  });
+  const [open, setOpen] = useState(false);
+  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const activeSlides =
+    PROJECTS_DATA[activeProjectIndex]?.gallery?.map((src) => ({ src })) ?? [];
   return (
     <div className={styles.page}>
-      <Header />
+      <Header setModalData={setModalData} />
       <div className="">
         <Swiper
           modules={[Autoplay, Pagination]}
@@ -203,7 +277,7 @@ export default function Home() {
           ))}
         </Swiper>
       </div>
-      <div className="my-5 py-md-3">
+      <div className="my-md-5 py-md-3">
         <div
           className=""
           style={{
@@ -256,257 +330,210 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="my-5 px-md-5 px-3 py-md-3">
-        <div className="mb-3">
-          <div
-            className="d-flex align-items-center mb-3"
-            style={{ gap: "0.7em" }}
-          >
+      <div className="services-section">
+        <div className="px-md-5 px-3 pb-4 pb-md-5 my-5 ">
+          <div className="mb-3">
             <div
-              className="rounded-5 m-0"
-              style={{
-                width: "12px",
-                height: "12px",
-                backgroundColor: "#E5AA00",
-              }}
-            ></div>
-            <h6
-              className="text-uppercase text-muted m-0"
-              style={{ letterSpacing: "0.2em" }}
+              className="d-flex align-items-center mb-3"
+              style={{ gap: "0.7em" }}
             >
-              SERVICES WE OFFER
-            </h6>
+              <div
+                className="rounded-5 m-0"
+                style={{
+                  width: "12px",
+                  height: "12px",
+                  backgroundColor: "#E5AA00",
+                }}
+              ></div>
+              <h6
+                className="text-uppercase text-muted m-0"
+                style={{ letterSpacing: "0.2em" }}
+              >
+                SERVICES WE OFFER
+              </h6>
+            </div>
+            <div>
+              <h3 className="mb-4 services-heading">
+                Services Tailored for Lasting Impact
+              </h3>
+            </div>
           </div>
           <div>
-            <h3 className="mb-4">Services Tailored for Lasting Impact</h3>
+            <div>
+              <Swiper
+                modules={[Autoplay, Pagination]}
+                autoplay={{ delay: 2800, disableOnInteraction: false }}
+                pagination={{ clickable: true }}
+                loop={true}
+                speed={2000}
+                slidesPerView={1.2}
+                spaceBetween={15}
+                breakpoints={{
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                    allowTouchMove: false, // disable dragging/swiping on desktop
+                  },
+                }}
+                allowTouchMove={true} // enabled for mobile by default
+                className="secondarySwiper leadership-swiper"
+              >
+                <SwiperSlide className="rounded-2 service-card mb-4">
+                  <div className="mb-3">
+                    <img
+                      src="/services/fall-ceiling.jpg"
+                      alt="services"
+                      className="w-100"
+                      style={{
+                        height: "auto",
+                        objectFit: "cover",
+                        borderTopLeftRadius: "7px",
+                        borderTopRightRadius: "7px",
+                      }}
+                    />
+                  </div>
+                  <div className="p-3">
+                    <h5 className="mb-2 primary-color">
+                      False Ceilings, Partitions & Panelling
+                    </h5>
+                    <p className="mb-0">
+                      Structural elements that shape how a space looks and
+                      feels, executed for durability and precision.
+                    </p>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="rounded-2 service-card mb-4">
+                  <div className="mb-3">
+                    <img
+                      src="/services/furniture.jpg"
+                      alt="services"
+                      className="w-100"
+                      style={{
+                        height: "auto",
+                        objectFit: "cover",
+                        borderTopLeftRadius: "7px",
+                        borderTopRightRadius: "7px",
+                      }}
+                    />
+                  </div>
+                  <div className="p-3">
+                    <h5 className="mb-2 primary-color">
+                      Bespoke Loose Furniture
+                    </h5>
+                    <p className="mb-0">
+                      Custom-built, high-quality furniture designed to fit
+                      luxury spaces perfectly.
+                    </p>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="rounded-2 service-card mb-4">
+                  <div className="mb-3">
+                    <img
+                      src="/services/interior-solutions.jpg"
+                      alt="services"
+                      className="w-100"
+                      style={{
+                        height: "auto",
+                        objectFit: "cover",
+                        borderTopLeftRadius: "7px",
+                        borderTopRightRadius: "7px",
+                      }}
+                    />
+                  </div>
+                  <div className="p-3">
+                    <h5 className="mb-2 primary-color">
+                      Turnkey Interior Solutions
+                    </h5>
+                    <p className="mb-0">
+                      Project delivery from design to execution, ensuring a
+                      seamless process and timely completion.
+                    </p>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
           </div>
         </div>
-        <div>
-          <div>
-            <Swiper
-              slidesPerView={1.2}
-              spaceBetween={15}
-              breakpoints={{
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 24,
-                  allowTouchMove: false, // disable dragging/swiping on desktop
-                },
-              }}
-              allowTouchMove={true} // enabled for mobile by default
-              className="secondarySwiper"
+        <div className="mb-5 px-md-5 px-3 py-md-3">
+          <div className="mb-3">
+            <div
+              className="d-flex align-items-center mb-3"
+              style={{ gap: "0.7em" }}
             >
-              <SwiperSlide className="">
-                <div className="mb-3">
-                  <img
-                    src="/services/fall-ceiling.jpg"
-                    alt="services"
-                    className="w-100 rounded-2"
-                    style={{ height: "auto", objectFit: "cover" }}
-                  />
-                </div>
-                <div>
-                  <p className="mb-2 primary-color">
-                    False Ceilings, Partitions & Panelling
-                  </p>
-                  <p className="mb-0">
-                    Structural elements that shape how a space looks and feels,
-                    executed for durability and precision.
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="">
-                <div className="mb-3">
-                  <img
-                    src="/services/furniture.jpg"
-                    alt="services"
-                    className="w-100 rounded-2"
-                    style={{ height: "auto", objectFit: "cover" }}
-                  />
-                </div>
-                <div>
-                  <p className="mb-2 primary-color">Bespoke Loose Furniture</p>
-                  <p className="mb-0">
-                    Custom-built, high-quality furniture designed to fit luxury
-                    spaces perfectly.
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="">
-                <div className="mb-3">
-                  <img
-                    src="/services/interior-solutions.jpg"
-                    alt="services"
-                    className="w-100 rounded-2"
-                    style={{ height: "auto", objectFit: "cover" }}
-                  />
-                </div>
-                <div>
-                  <p className="mb-2 primary-color">
-                    Turnkey Interior Solutions
-                  </p>
-                  <p className="mb-0">
-                    Project delivery from design to execution, ensuring a
-                    seamless process and timely completion without compromising
-                    on quality.
-                  </p>
-                </div>
-              </SwiperSlide>
-            </Swiper>
+              <div
+                className="rounded-5 m-0"
+                style={{
+                  width: "12px",
+                  height: "12px",
+                  backgroundColor: "#E5AA00",
+                }}
+              ></div>
+              <h6
+                className="text-uppercase text-muted m-0"
+                style={{ letterSpacing: "0.2em" }}
+              >
+                OUR PROJECTS
+              </h6>
+            </div>
+            <div>
+              <h3 className="mb-4 services-heading">
+                Projects That Inspire Confidence
+              </h3>
+            </div>
+          </div>
+          <div>
+            <div>
+              <Swiper
+                modules={[Autoplay, Pagination]}
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                pagination={{ clickable: true }}
+                loop={true}
+                speed={2000}
+                slidesPerView={1.2}
+                spaceBetween={16}
+                breakpoints={{
+                  768: {
+                    slidesPerView: 3.5,
+                    spaceBetween: 25,
+                    allowTouchMove: true,
+                  },
+                }}
+                allowTouchMove={true} // enabled for mobile by default
+                className="secondarySwiper leadership-swiper"
+              >
+                {PROJECTS_DATA.map((project, index) => (
+                  <SwiperSlide className="pb-0" key={index}>
+                    <div
+                      className="project-card"
+                      onClick={() => {
+                        setActiveProjectIndex(index);
+                        setActiveSlideIndex(0);
+                        setOpen(true);
+                      }}
+                      aria-label={`Open ${project.title} gallery`}
+                    >
+                      <div className="mb-3">
+                        <img
+                          src={project.cover}
+                          alt={project.id}
+                          className="w-100 rounded-2"
+                          style={{ height: "auto", objectFit: "cover" }}
+                        />
+                      </div>
+                      <div>
+                        <p className="mb-3 mb-md-4 primary-color">
+                          {project.title}
+                        </p>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
           </div>
         </div>
       </div>
-      <div className="my-5 px-md-5 px-3 py-md-3">
-        <div className="mb-3">
-          <div
-            className="d-flex align-items-center mb-3"
-            style={{ gap: "0.7em" }}
-          >
-            <div
-              className="rounded-5 m-0"
-              style={{
-                width: "12px",
-                height: "12px",
-                backgroundColor: "#E5AA00",
-              }}
-            ></div>
-            <h6
-              className="text-uppercase text-muted m-0"
-              style={{ letterSpacing: "0.2em" }}
-            >
-              OUR PROJECTS
-            </h6>
-          </div>
-          <div>
-            <h3 className="mb-4">Projects That Inspire Confidence</h3>
-          </div>
-        </div>
-        <div>
-          <div>
-            <Swiper
-              modules={[Autoplay, Pagination]}
-              autoplay={{ delay: 2000, disableOnInteraction: false }}
-              pagination={{ clickable: true }}
-              loop={true}
-              speed={1300}
-              slidesPerView={1.2}
-              spaceBetween={16}
-              breakpoints={{
-                768: {
-                  slidesPerView: 3.5,
-                  spaceBetween: 25,
-                  allowTouchMove: true,
-                },
-              }}
-              allowTouchMove={true} // enabled for mobile by default
-              className="secondarySwiper"
-            >
-              <SwiperSlide className="pb-5">
-                <div className="mb-3">
-                  <img
-                    src="/projects/LemonTreeHotelsDIALLounge&Banquet.jpg"
-                    alt="projects"
-                    className="w-100 rounded-2"
-                    style={{ height: "auto", objectFit: "cover" }}
-                  />
-                </div>
-                <div>
-                  <p className="mb-2 primary-color">
-                    Lemon Tree Hotels - DIAL Lounge & Banquet
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="pb-5">
-                <div className="mb-3">
-                  <img
-                    src="/projects/DLFCamelias.jpg"
-                    alt="projects"
-                    className="w-100 rounded-2"
-                    style={{ height: "auto", objectFit: "cover" }}
-                  />
-                </div>
-                <div>
-                  <p className="mb-2 primary-color">DLF Camellias</p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="pb-5">
-                <div className="mb-3">
-                  <img
-                    src="/projects/LemonTreeKolkata.jpg"
-                    alt="projects"
-                    className="w-100 rounded-2"
-                    style={{ height: "auto", objectFit: "cover" }}
-                  />
-                </div>
-                <div>
-                  <p className="mb-2 primary-color">
-                    Lemon Tree Premier, Kolkata
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="pb-5">
-                <div className="mb-3">
-                  <img
-                    src="/projects/KeysHotelDehradun.jpg"
-                    alt="projects"
-                    className="w-100 rounded-2"
-                    style={{ height: "auto", objectFit: "cover" }}
-                  />
-                </div>
-                <div>
-                  <p className="mb-2 primary-color">
-                    Keys Prima Hotels India, Dehradun
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="pb-5">
-                <div className="mb-3">
-                  <img
-                    src="/projects/AurikaUdaipur.jpg"
-                    alt="projects"
-                    className="w-100 rounded-2"
-                    style={{ height: "auto", objectFit: "cover" }}
-                  />
-                </div>
-                <div>
-                  <p className="mb-2 primary-color">
-                    Aurika, Udaipur – Luxury by Lemon Tree Hotels
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="pb-5">
-                <div className="mb-3">
-                  <img
-                    src="/projects/AristaAmbition.jpg"
-                    alt="projects"
-                    className="w-100 rounded-2"
-                    style={{ height: "auto", objectFit: "cover" }}
-                  />
-                </div>
-                <div>
-                  <p className="mb-2 primary-color">Arista by Ambition</p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="pb-5">
-                <div className="mb-3">
-                  <img
-                    src="/projects/LemonTreeMumbai.jpg"
-                    alt="projects"
-                    className="w-100 rounded-2"
-                    style={{ height: "auto", objectFit: "cover" }}
-                  />
-                </div>
-                <div>
-                  <p className="mb-2 primary-color">
-                    Lemon Tree Premier, Mumbai
-                  </p>
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </div>
-      </div>
-      <div className="my-5 py-md-3">
+      <div className="">
         <div
           className="text-light"
           style={{
@@ -590,10 +617,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="my-5 py-md-3 px-md-5 px-3">
+      <div className="leadership-section mb-md-5 py-5 px-md-5 px-3">
         <div className="d-flex justify-content-center w-100">
-          <div className="w-100">
-            <div className="mb-5">
+          <div className="w-100 leadership-container">
+            <div className="mb-5 leadership-header">
               <div
                 className="d-flex align-items-center justify-content-center mb-3"
                 style={{ gap: "0.7em" }}
@@ -613,74 +640,78 @@ export default function Home() {
                   OUR LEADERSHIP
                 </h6>
               </div>
+
               <div>
-                <h3 className="text-center">The People Behind Malbros</h3>
+                <h3 className="text-center services-heading">
+                  The People Behind Malbros
+                </h3>
               </div>
             </div>
+
             <div className="d-md-flex justify-content-center">
               <div className="col-md-9">
                 <Swiper
                   slidesPerView={1}
                   modules={[Pagination]}
-                  pagination={{ clickable: true }} // default for mobile
+                  pagination={{ clickable: true }}
                   spaceBetween={12}
-                  allowTouchMove={true} // swiping enabled on mobile
+                  allowTouchMove={true}
                   breakpoints={{
                     768: {
                       slidesPerView: 2,
                       spaceBetween: 35,
-                      allowTouchMove: false, // disable swiping on tablet/desktop
+                      allowTouchMove: false,
                     },
                   }}
-                  className="secondarySwiper pb-5"
+                  className="secondarySwiper pb-5 leadership-swiper"
                 >
                   <SwiperSlide>
-                    <div className="mb-3 d-flex justify-content-center">
-                      <img
-                        src="/founders/Rajjat.jpg"
-                        alt="founder"
-                        className="w-75 rounded-2"
-                      />
-                    </div>
-                    <div>
-                      <h5 className="mb-2 primary-color fw-bold">
-                        Mr. Rajjat Malhotra
-                      </h5>
-                      <small>
-                        <em>Founder & Managing Director</em>
-                      </small>
-                      <p className="my-2">
-                        With over 17 years of industry experience, Rajjat
-                        Malhotra has been the driving force behind Malbros’
-                        growth. His strategic vision and hands-on leadership
-                        have shaped the company into a trusted name in
-                        hospitality and corporate interiors across India.
-                      </p>
+                    <div className="leader-card">
+                      <div className="leader-media">
+                        <img
+                          src="/founders/Rajjat.jpg"
+                          alt="founder"
+                          className="leader-img"
+                        />
+                      </div>
+
+                      <div className="leader-body">
+                        <h5 className="leader-name">Mr. Rajjat Malhotra</h5>
+                        <div className="leader-role">
+                          Founder & Managing Director
+                        </div>
+                        <p className="leader-bio">
+                          With over 17 years of industry experience, Rajjat
+                          Malhotra has been the driving force behind Malbros’
+                          growth. His strategic vision and hands-on leadership
+                          have shaped the company into a trusted name in
+                          hospitality and corporate interiors across India.
+                        </p>
+                      </div>
                     </div>
                   </SwiperSlide>
 
                   <SwiperSlide>
-                    <div className="mb-3 d-flex justify-content-center">
-                      <img
-                        src="/founders/Aakshat.jpg"
-                        alt="director"
-                        className="w-75 rounded-2"
-                      />
-                    </div>
-                    <div>
-                      <h5 className="mb-2 primary-color fw-bold">
-                        Mr. Aakshat Malhotra
-                      </h5>
-                      <small>
-                        <em>Director</em>
-                      </small>
-                      <p className="my-2">
-                        Aakshat Malhotra brings fresh perspective and
-                        operational expertise to Malbros. His focus on
-                        innovation, efficiency, and client-centric delivery
-                        continues to strengthen the company’s position as a
-                        leader in design and execution.
-                      </p>
+                    <div className="leader-card">
+                      <div className="leader-media">
+                        <img
+                          src="/founders/Aakshat.jpg"
+                          alt="director"
+                          className="leader-img"
+                        />
+                      </div>
+
+                      <div className="leader-body">
+                        <h5 className="leader-name">Mr. Akkshat Malhotra</h5>
+                        <div className="leader-role">Director</div>
+                        <p className="leader-bio">
+                          Akkshat Malhotra brings fresh perspective and
+                          operational expertise to Malbros. His focus on
+                          innovation, efficiency, and client-centric delivery
+                          continues to strengthen the company’s position as a
+                          leader in design and execution.
+                        </p>
+                      </div>
                     </div>
                   </SwiperSlide>
                 </Swiper>
@@ -689,7 +720,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="my-5 py-md-3 px-md-5 px-3">
+      <div className="my-md-5 py-3 px-md-5 px-3">
         <div
           className="d-flex align-items-center justify-content-center mb-4"
           style={{ gap: "0.7em" }}
@@ -719,7 +750,7 @@ export default function Home() {
             speed={1300}
             spaceBetween={24}
             allowTouchMove={true} // swiping enabled on mobile
-            className="secondarySwiper pb-5"
+            className="secondarySwiper pb-5 leadership-swiper"
           >
             <SwiperSlide>
               <div className="border rounded-3 position-relative p-3 p-md-5 text-center">
@@ -808,6 +839,15 @@ export default function Home() {
           </Swiper>
         </div>
       </div>
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        slides={activeSlides}
+        index={activeSlideIndex}
+        on={{ view: ({ index }) => setActiveSlideIndex(index) }}
+      />
+      <ContactFormModal modalData={modalData} />
+
       <Footer />
     </div>
   );

@@ -4,9 +4,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: "#EDEDED" }}>
-      <hr></hr>
-      <div className="w-100 px-md-5 px-3 pb-5 pt-3">
+    <footer className="services-section">
+      <div className="w-100 px-md-5 px-3 pb-5 pt-5">
         <div className="d-flex justify-content-between w-100 mb-4">
           <div className="">
             <Link href="/">
