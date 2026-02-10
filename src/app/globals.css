@@ -216,7 +216,8 @@ a {
 /* portrait */
 .leader-img {
   width: 100%;
-  height: 320px;
+  height: 420px;
+  padding-inline: 30px;
   object-fit: cover;
   object-position: center top;
   border-radius: 16px;
@@ -264,6 +265,10 @@ a {
   background: #e5aa00;
 }
 
+.services-body-div{
+  height: 130px;
+}
+
 /* Mobile adjustments */
 @media (max-width: 575px) {
   .leadership-section {
@@ -271,7 +276,11 @@ a {
   }
   .leader-img {
     height: 240px;
+    padding-inline: 0;
   }
+  .services-body-div{
+  height: 180px;
+}
 }
 
 .project-card {

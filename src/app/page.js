@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import CountUp from "react-countup";
@@ -392,7 +392,7 @@ export default function Home() {
                       }}
                     />
                   </div>
-                  <div className="p-3">
+                  <div className="p-3 services-body-div">
                     <h5 className="mb-2 primary-color">
                       False Ceilings, Partitions & Panelling
                     </h5>
@@ -416,7 +416,7 @@ export default function Home() {
                       }}
                     />
                   </div>
-                  <div className="p-3">
+                  <div className="p-3 services-body-div">
                     <h5 className="mb-2 primary-color">
                       Bespoke Loose Furniture
                     </h5>
@@ -440,7 +440,7 @@ export default function Home() {
                       }}
                     />
                   </div>
-                  <div className="p-3">
+                  <div className="p-3 services-body-div">
                     <h5 className="mb-2 primary-color">
                       Turnkey Interior Solutions
                     </h5>
