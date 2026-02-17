@@ -16,13 +16,11 @@ import { useState } from "react";
 import ContactFormModal from "./components/ContactFormModal";
 
 const logos = [
-  "/partnerLogos/shimano.png",
-  "/partnerLogos/kmc.png",
-  "/partnerLogos/maxxis.png",
-  "/partnerLogos/wtb.png",
-  "/partnerLogos/rockshox.png",
-  "/partnerLogos/wtb.png",
-  "/partnerLogos/rockshox.png",
+  "/partnerLogos/logo1.png",
+  "/partnerLogos/logo2.png",
+  "/partnerLogos/logo3.webp",
+  "/partnerLogos/logo4.png",
+  "/partnerLogos/logo5.png",
 ];
 
 const ALL_PROJECT_IMAGES = [
@@ -40,7 +38,13 @@ const PROJECTS_DATA = [
     id: "lemon-tree-dial",
     title: "Lemon Tree Hotels – DIAL Lounge & Banquet",
     cover: "/projects/LemonTreeHotelsDIALLounge&Banquet.jpg",
-    gallery: ALL_PROJECT_IMAGES,
+    gallery: [
+      "/projects/LTDial/1.webp",
+      "/projects/LTDial/2.webp",
+      "/projects/LTDial/3.webp",
+      "/projects/LTDial/4.webp",
+      "/projects/LTDial/5.webp",
+    ],
   },
 
   {
@@ -54,7 +58,17 @@ const PROJECTS_DATA = [
     id: "lemon-tree-kolkata",
     title: "Lemon Tree Premier, Kolkata",
     cover: "/projects/LemonTreeKolkata.jpg",
-    gallery: ALL_PROJECT_IMAGES,
+    gallery: [
+      "/projects/LTKolkata/1.webp",
+      "/projects/LTKolkata/2.webp",
+      "/projects/LTKolkata/3.webp",
+      "/projects/LTKolkata/4.webp",
+      "/projects/LTKolkata/5.webp",
+      "/projects/LTKolkata/6.webp",
+      "/projects/LTKolkata/7.webp",
+      "/projects/LTKolkata/8.webp",
+      "/projects/LTKolkata/9.webp",
+    ],
   },
 
   {
@@ -68,21 +82,51 @@ const PROJECTS_DATA = [
     id: "aurika-udaipur",
     title: "Aurika, Udaipur – Luxury by Lemon Tree Hotels",
     cover: "/projects/AurikaUdaipur.jpg",
-    gallery: ALL_PROJECT_IMAGES,
+    gallery: [
+      "/projects/Aurika/1.webp",
+      "/projects/Aurika/2.webp",
+      "/projects/Aurika/3.webp",
+      "/projects/Aurika/4.webp",
+      "/projects/Aurika/5.webp",
+      "/projects/Aurika/6.webp",
+      "/projects/Aurika/7.webp",
+      "/projects/Aurika/8.webp",
+      "/projects/Aurika/9.webp",
+    ],
   },
 
   {
     id: "arista-ambition",
     title: "Arista by Ambition",
     cover: "/projects/AristaAmbition.jpg",
-    gallery: ALL_PROJECT_IMAGES,
+    gallery: [
+      "/projects/Arista/1.webp",
+      "/projects/Arista/2.webp",
+      "/projects/Arista/3.webp",
+      "/projects/Arista/4.webp",
+      "/projects/Arista/5.webp",
+      "/projects/Arista/6.webp",
+      "/projects/Arista/7.webp",
+      "/projects/Arista/8.webp",
+      "/projects/Arista/9.webp",
+    ],
   },
 
   {
     id: "lemon-tree-mumbai",
     title: "Lemon Tree Premier, Mumbai",
     cover: "/projects/LemonTreeMumbai.jpg",
-    gallery: ALL_PROJECT_IMAGES,
+    gallery: [
+      "/projects/LTMumbai/1.webp",
+      "/projects/LTMumbai/2.webp",
+      "/projects/LTMumbai/3.webp",
+      "/projects/LTMumbai/4.webp",
+      "/projects/LTMumbai/5.webp",
+      "/projects/LTMumbai/6.webp",
+      "/projects/LTMumbai/7.webp",
+      "/projects/LTMumbai/8.webp",
+      "/projects/LTMumbai/9.webp",
+    ],
   },
 ];
 
@@ -247,7 +291,7 @@ export default function Home() {
           loop={true}
           centeredSlides={false}
           slidesPerView={3} // roughly 4 visible slides
-          spaceBetween={40}
+          spaceBetween={50}
           speed={6000} // higher = slower continuous motion
           autoplay={{
             delay: 1, // continuous effect
@@ -256,22 +300,20 @@ export default function Home() {
           }}
           allowTouchMove={false}
           grabCursor={false}
-          className="brand-marquee"
+          className="brand-marquee d-flex justify-content-center align-items-center"
           breakpoints={{
             768: {
-              slidesPerView: 5,
+              slidesPerView: 4,
             },
           }}
         >
           {logos.map((src, i) => (
-            <SwiperSlide key={i}>
-              <div className="flex justify-center align-items-center">
-                <img
-                  src={src.src}
-                  alt={`logo-${i}`}
-                  className="img-fluid"
-                  style={{ height: "50px", objectFit: "contain" }}
-                />
+            <SwiperSlide
+              key={i}
+              className="h-100 d-flex justify-content-center align-items-center"
+            >
+              <div className="d-flex justify-content-center align-items-center">
+                <img src={src} alt={`logo-${i}`} className="col-12 col-md-6" />
               </div>
             </SwiperSlide>
           ))}
@@ -314,13 +356,21 @@ export default function Home() {
                   Designing and Delivering<br></br>Spaces That Inspire
                 </h3>
                 <p>
-                  With over 17 years of experience, we’ve built a strong
-                  reputation for delivering high-quality solutions across
-                  hospitality, corporate, and diverse commercial sectors. From
-                  concept to completion, our team combines expertise, scale, and
-                  precision to bring every project to life. Pan-India presence,
-                  serving clients across multiple cities with consistency and
-                  reliability
+                  At Malbros Furnitures, we don’t just manufacture furniture —
+                  we build lasting spaces.With over two decades of expertise in
+                  turnkey interior contracting and contract-based furniture
+                  manufacturing, we have grown into a trusted partner for some
+                  of India’s most prestigious hospitality projects, we
+                  specialize in transforming spaces for luxury hotels,
+                  residences, and commercial projects.
+                </p>
+                <p>
+                  With a strong focus on quality, timelines, and precision
+                  execution, we work hand-in-hand with interior designers,
+                  architects, and developers to bring design visions to life.
+                  From bespoke furniture to large-scale fit-outs, every project
+                  we take on is built on craftsmanship, collaboration, and
+                  trust.
                 </p>
               </div>
             </div>
@@ -372,7 +422,7 @@ export default function Home() {
                   768: {
                     slidesPerView: 3,
                     spaceBetween: 24,
-                    allowTouchMove: false, // disable dragging/swiping on desktop
+                    allowTouchMove: true, // disable dragging/swiping on desktop
                   },
                 }}
                 allowTouchMove={true} // enabled for mobile by default
@@ -549,11 +599,8 @@ export default function Home() {
               <div className="col-md-6">
                 <h3 className="mb-4">Our In-House Strength</h3>
                 <p>
-                  At the heart of our operations is a 40,000 sq.ft.
-                  state-of-the-art facility equipped with advanced machinery and
-                  a highly skilled workforce. By keeping manufacturing in-house,
-                  we ensure complete quality control, faster turnaround times,
-                  and precision in every detail.
+                  At Malbros Furnitures, we believe control over every stage of
+                  execution is what sets us apart.
                 </p>
               </div>
               <div></div>
@@ -564,7 +611,7 @@ export default function Home() {
                 spaceBetween={15}
                 breakpoints={{
                   768: {
-                    slidesPerView: 4,
+                    slidesPerView: 3,
                     spaceBetween: 24,
                     allowTouchMove: false, // disable dragging/swiping on desktop
                   },
@@ -581,6 +628,14 @@ export default function Home() {
                       style={{ height: "auto", objectFit: "cover" }}
                     />
                   </div>
+                  <div>
+                    <h5 className="">Manufacturing Facility</h5>
+                    <p>
+                      A modern, in-house factory equipped with advanced
+                      woodworking and finishing machinery, now expanding to meet
+                      growing demand with higher efficiency and scale.
+                    </p>
+                  </div>
                 </SwiperSlide>
                 <SwiperSlide className="">
                   <div className="mb-3">
@@ -590,6 +645,14 @@ export default function Home() {
                       className="w-100 rounded-2"
                       style={{ height: "auto", objectFit: "cover" }}
                     />
+                  </div>
+                  <div>
+                    <h5 className="">Carpentry Team</h5>
+                    <p>
+                      A strong pool of skilled carpenters and craftsmen who
+                      bring precision, detail, and artistry to every bespoke
+                      piece.
+                    </p>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="">
@@ -601,18 +664,20 @@ export default function Home() {
                       style={{ height: "auto", objectFit: "cover" }}
                     />
                   </div>
-                </SwiperSlide>
-                <SwiperSlide className="">
-                  <div className="mb-3">
-                    <img
-                      src="/in-house-strength/4.jpg"
-                      alt="in-house-strength"
-                      className="w-100 rounded-2"
-                      style={{ height: "auto", objectFit: "cover" }}
-                    />
+                  <div>
+                    <h5 className="">Contractor Network</h5>
+                    <p>
+                      A reliable network of contractors and site supervisors
+                      that ensures seamless execution of large-scale projects,
+                      on time and to specification.
+                    </p>
                   </div>
                 </SwiperSlide>
               </Swiper>
+              <p className="mt-4">
+                With these strengths combined, we deliver end-to-end interior
+                solutions with consistency, speed, and craftsmanship.
+              </p>
             </div>
           </div>
         </div>

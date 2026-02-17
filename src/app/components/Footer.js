@@ -31,15 +31,39 @@ const Footer = () => {
           </div>
           <div className="col-md-3">
             <div className="mb-4">
-              <h6 className="mb-2">Location</h6>
+              <h6 className="mb-2">Office Address</h6>
               <a href="">
                 <small>
-                  Malbros Furniture, 3rd Floor, Blossom Heights, Lane 5,
-                  Koregaon Park, Pune, Maharashtra – 411001, India
+                  OFFICE NO. 230<br></br>DLF prime towers, Plot No 79 & 80, Mata Mohalla, Pocket F, Okhla Phase I, Okhla Industrial Estate, New Delhi, Delhi 110020
                 </small>
               </a>
             </div>
-            <div>
+            <div className="d-none d-md-block">
+              <h6 className="mb-2">Contact Us</h6>
+              <a href="mailto:hello@yourbrandname.com">
+                <small>
+                  <span className="">Email: </span>
+                  hello@yourbrandname.com
+                </small>
+              </a>
+              <br></br>
+              <a href="tel:+919876543210">
+                <small>
+                  <span className="">Phone: </span>+919876543210
+                </small>
+              </a>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="mb-4">
+              <h6 className="mb-2">Factory Address</h6>
+              <a href="">
+                <small>
+                  MALBROS FURNITURES, F69, Site B Industrial Area Rd, Block F, UPSIDC Site B, Surajpur, Greater Noida, Uttar Pradesh 201306
+                </small>
+              </a>
+            </div>
+            <div className="d-lg-none">
               <h6 className="mb-2">Contact Us</h6>
               <a href="mailto:hello@yourbrandname.com">
                 <small>
