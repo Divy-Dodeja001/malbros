@@ -741,13 +741,13 @@ export default function Home() {
                       </div>
 
                       <div className="leader-body">
-                        <h5 className="leader-name">Mr. Rajjat Malhotra</h5>
+                        <h5 className="leader-name">Mr. Rajjat Malhotraa</h5>
                         <div className="leader-role">
                           Founder & Managing Director
                         </div>
                         <p className="leader-bio">
                           With over 17 years of industry experience, Rajjat
-                          Malhotra has been the driving force behind Malbros’
+                          Malhotraa has been the driving force behind Malbros’
                           growth. His strategic vision and hands-on leadership
                           have shaped the company into a trusted name in
                           hospitality and corporate interiors across India.
@@ -767,10 +767,10 @@ export default function Home() {
                       </div>
 
                       <div className="leader-body">
-                        <h5 className="leader-name">Mr. Akkshat Malhotra</h5>
+                        <h5 className="leader-name">Mr. Akkshat Malhotraa</h5>
                         <div className="leader-role">Director</div>
                         <p className="leader-bio">
-                          Akkshat Malhotra brings fresh perspective and
+                          Akkshat Malhotraa brings fresh perspective and
                           operational expertise to Malbros. His focus on
                           innovation, efficiency, and client-centric delivery
                           continues to strengthen the company’s position as a
