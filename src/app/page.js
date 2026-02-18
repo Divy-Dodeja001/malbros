@@ -23,16 +23,6 @@ const logos = [
   "/partnerLogos/logo5.png",
 ];
 
-const ALL_PROJECT_IMAGES = [
-  "/projects/LemonTreeHotelsDIALLounge&Banquet.jpg",
-  "/projects/DLFCamelias.jpg",
-  "/projects/LemonTreeKolkata.jpg",
-  "/projects/KeysHotelDehradun.jpg",
-  "/projects/AurikaUdaipur.jpg",
-  "/projects/AristaAmbition.jpg",
-  "/projects/LemonTreeMumbai.jpg",
-];
-
 const PROJECTS_DATA = [
   {
     id: "lemon-tree-dial",
@@ -51,7 +41,12 @@ const PROJECTS_DATA = [
     id: "dlf-camellias",
     title: "DLF Camellias",
     cover: "/projects/DLFCamelias.jpg",
-    gallery: ALL_PROJECT_IMAGES,
+    gallery: [
+      "/projects/DLF/1.jpg",
+      "/projects/DLF/2.jpg",
+      "/projects/DLF/3.jpg",
+      "/projects/DLF/4.jpg",
+    ],
   },
 
   {
@@ -75,7 +70,13 @@ const PROJECTS_DATA = [
     id: "keys-prima-dehradun",
     title: "Keys Prima Hotels India, Dehradun",
     cover: "/projects/KeysHotelDehradun.jpg",
-    gallery: ALL_PROJECT_IMAGES,
+    gallery: [
+      "/projects/KeyH/1.jpg",
+      "/projects/KeyH/2.jpg",
+      "/projects/KeyH/3.jpg",
+      "/projects/KeyH/4.jpg",
+      "/projects/KeyH/5.jpg",
+    ],
   },
 
   {
