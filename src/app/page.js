@@ -675,10 +675,6 @@ export default function Home() {
                   </div>
                 </SwiperSlide>
               </Swiper>
-              <p className="mt-4">
-                With these strengths combined, we deliver end-to-end interior
-                solutions with consistency, speed, and craftsmanship.
-              </p>
             </div>
           </div>
         </div>
