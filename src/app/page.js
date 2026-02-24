@@ -16,10 +16,10 @@ import { useState } from "react";
 import ContactFormModal from "./components/ContactFormModal";
 
 const logos = [
+  "/partnerLogos/logo4.png",
   "/partnerLogos/logo1.png",
   "/partnerLogos/logo2.png",
   "/partnerLogos/logo3.webp",
-  "/partnerLogos/logo4.png",
   "/partnerLogos/logo5.png",
 ];
 
@@ -266,21 +266,21 @@ export default function Home() {
         >
           <div className="p-md-5 p-4 w-100">
             <h4 className="counter">
-              {inView && <CountUp end={17} duration={3} />}+
+              {inView && <CountUp end={17} duration={4} />}+
             </h4>
             <p className="m-0">years of experience</p>
           </div>
           <div className="divider"></div>
           <div className="p-md-5 p-4  w-100">
             <h4 className="counter">
-              {inView && <CountUp end={100} duration={3} />}+
+              {inView && <CountUp end={100} duration={4} />}+
             </h4>
             <p className="m-0">projects delivered</p>
           </div>
           <div className="divider"></div>
           <div className="p-md-5 p-4 w-100">
             <h4 className="counter">
-              {inView && <CountUp end={40} duration={3} />}K+
+              {inView && <CountUp end={40} duration={4} />}K+
             </h4>
             <p className="m-0">sq. ft. facility</p>
           </div>
@@ -705,12 +705,6 @@ export default function Home() {
                 >
                   OUR LEADERSHIP
                 </h6>
-              </div>
-
-              <div>
-                <h3 className="text-center services-heading">
-                  The People Behind Malbros
-                </h3>
               </div>
             </div>
 

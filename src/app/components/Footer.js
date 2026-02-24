@@ -21,8 +21,8 @@ const Footer = () => {
         </div>
         <div className="d-md-flex justify-content-between w-100">
           <div className="mb-4">
-            <h5 className="mb-3">
-              Let’s Create Something<br></br>Beautiful Together!
+            <h5 className="mb-2">
+              Creating luxury, Crafting Perfection
             </h5>
             <small className="w-md-75 m-0">
               Crafting unforgettable celebrations with heart, elegance, and

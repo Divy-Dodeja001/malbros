@@ -129,6 +129,7 @@ a {
 
 .services-heading {
   font-weight: 600;
+  font-size: 24px;
   letter-spacing: -0.02em;
 
   background: linear-gradient(90deg, #3b3b3b 0%, #caa24d 45%, #8f6b2e 100%);
@@ -309,4 +310,82 @@ a {
 
 .btn-close {
   --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") !important;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  max-width: 320px;
+  height: 100vh;
+  background: #fff;
+  z-index: 9999;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: right 0.35s ease-in-out;
+}
+
+.mobile-drawer.open {
+  right: 0;
+}
+
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9998;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.header-gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(251, 216, 113, 0.451) 0%,
+    rgba(204, 162, 47, 0.46) 40%,
+    rgba(151, 116, 21, 0.437) 75%,
+    rgba(129, 95, 2, 0.622) 100%
+  );
+  backdrop-filter: blur(10px) saturate(1.25);
+  -webkit-backdrop-filter: blur(10px) saturate(1.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.header-gradient::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(229, 170, 0, 0.5),
+    transparent
+  );
+}
+
+.yarl__container {
+  background: rgba(0, 0, 0, 0.7) !important;
+  transition: backdrop-filter 0.25s ease, background 0.25s ease;
+}
+
+.yarl__button {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.35) !important;
+  border-radius: 50%;
+  padding: 8px!important;
 }

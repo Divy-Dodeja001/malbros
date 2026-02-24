@@ -78,9 +78,9 @@ export default function ContactFormModal({ modalData }) {
         aria-hidden="true"
       >
         <div className="modal-dialog modal-dialog-centered" style={{ color: "grey" }}>
-          <div className="modal-content w-100 p-2 p-md-3" style={{ backgroundColor: "black" }}>
+          <div className="modal-content w-100 p-2 p-md-3">
             <div className="modal-header border-0">
-              <h4 className="modal-title text-center w-100 text-light">
+              <h4 className="modal-title text-center w-100">
                 Fill Details
               </h4>
               <button
@@ -90,7 +90,7 @@ export default function ContactFormModal({ modalData }) {
               ></button>
             </div>
 
-            <div className="modal-body text-light">
+            <div className="modal-body">
               <form onSubmit={handleSubmit}>
                 <div className="d-flex mb-3" style={{ gap: "0.7em" }}>
                   <input
@@ -151,10 +151,6 @@ export default function ContactFormModal({ modalData }) {
                       required
                     >
                       <option value="">Select Job Title</option>
-                      <option value="Frontend Developer">Frontend Developer</option>
-                      <option value="Backend Developer">Backend Developer</option>
-                      <option value="Full Stack Developer">Full Stack Developer</option>
-                      <option value="UI/UX Designer">UI/UX Designer</option>
                     </select>
                   </div>
                 )}
