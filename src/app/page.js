@@ -166,12 +166,10 @@ export default function Home() {
               >
                 <div className="d-flex w-100 justify-content-center">
                   <div className="text-light text-center px-3">
-                    <h1 className="fw-bold">
-                      Creating Luxury. Crafting Perfection
-                    </h1>
+                    <h1 className="fw-bold">Built to Bring Design to Life</h1>
                     <p>
-                      Turnkey interior execution for hospitality, corporate and
-                      luxury residential projects
+                      Delivering furniture and interior solutions for
+                      hospitality, corporate, and commercial environments.
                     </p>
                   </div>
                 </div>
@@ -200,11 +198,11 @@ export default function Home() {
                 <div className="d-flex w-100 justify-content-center">
                   <div className="text-light text-center px-3">
                     <h1 className="fw-bold">
-                      Creating Luxury. Crafting Perfection
+                      Where Craftsmanship Meets Capability
                     </h1>
                     <p>
-                      Turnkey interior execution for hospitality, corporate and
-                      luxury residential projects
+                      Combining manufacturing expertise with strong quality
+                      control across every project.
                     </p>
                   </div>
                 </div>
@@ -232,12 +230,10 @@ export default function Home() {
               >
                 <div className="d-flex w-100 justify-content-center">
                   <div className="text-light text-center px-3">
-                    <h1 className="fw-bold">
-                      Creating Luxury. Crafting Perfection
-                    </h1>
+                    <h1 className="fw-bold">Execution You Can Depend On</h1>
                     <p>
-                      Turnkey interior execution for hospitality, corporate and
-                      luxury residential projects
+                      Trusted by industry leaders to provide end-to-end
+                      execution and project management.
                     </p>
                   </div>
                 </div>
@@ -354,24 +350,23 @@ export default function Home() {
               </div>
               <div className="mb-md-5">
                 <h3 className="mb-3 mb-md-5 fw-bold">
-                  Designing and Delivering<br></br>Spaces That Inspire
+                  The Makers Behind Exceptional Spaces
                 </h3>
                 <p>
-                  At Malbros Furnitures, we don’t just manufacture furniture —
-                  we build lasting spaces.With over two decades of expertise in
-                  turnkey interior contracting and contract-based furniture
-                  manufacturing, we have grown into a trusted partner for some
-                  of India’s most prestigious hospitality projects, we
-                  specialize in transforming spaces for luxury hotels,
-                  residences, and commercial projects.
+                  Based in Delhi and shaped by over seventeen years of
+                  experience, Malbros Furnitures is a leading interior
+                  contracting and bespoke furniture manufacturing firm that
+                  delivers turnkey interiors and bespoke furniture for
+                  hospitality, corporate, healthcare, and luxury residences. Our
+                  45,000 sq ft facility and team of 150+ specialists bring
+                  together advanced manufacturing and human craftsmanship,
+                  working as one.
                 </p>
                 <p>
-                  With a strong focus on quality, timelines, and precision
-                  execution, we work hand-in-hand with interior designers,
-                  architects, and developers to bring design visions to life.
-                  From bespoke furniture to large-scale fit-outs, every project
-                  we take on is built on craftsmanship, collaboration, and
-                  trust.
+                  Trusted by Radisson, Hyatt, Lemon Tree Hotels, Burman Estates,
+                  and Arista by Ambition, Malbros collaborates with architects
+                  and designers to turn vision into reality. Designed with care,
+                  engineered for longevity.
                 </p>
               </div>
             </div>
