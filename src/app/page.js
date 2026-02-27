@@ -677,6 +677,25 @@ export default function Home() {
       </div>
       <div className="leadership-section">
         <div className="d-flex justify-content-center container py-5">
+          <div
+                className="d-flex align-items-center justify-content-center mb-3"
+                style={{ gap: "0.7em" }}
+              >
+                <div
+                  className="rounded-5 m-0"
+                  style={{
+                    width: "12px",
+                    height: "12px",
+                    backgroundColor: "#E5AA00",
+                  }}
+                ></div>
+                <h6
+                  className="text-uppercase text-muted m-0 text-center"
+                  style={{ letterSpacing: "0.2em" }}
+                >
+                  LOCATE US
+                </h6>
+              </div>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d219.3300852592198!2d77.28308732096656!3d28.51929230998862!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce14ba115d61b%3A0x3b032b8fffdcc574!2sDLF%20Prime%20Towers!5e0!3m2!1sen!2sin!4v1772173439056!5m2!1sen!2sin"
             width="100%"
@@ -913,7 +932,6 @@ export default function Home() {
       >
       </Lightbox>
       <ContactFormModal modalData={modalData} />
-
       <Footer />
     </div>
   );
