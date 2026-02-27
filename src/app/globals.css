@@ -321,10 +321,8 @@ a {
   height: 100vh;
   background: #fff;
   z-index: 9999;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* display: flex;
+  flex-direction: column; */
   transition: right 0.35s ease-in-out;
 }
 

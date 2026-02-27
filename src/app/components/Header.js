@@ -36,7 +36,12 @@ const Header = ({ setModalData }) => {
           onClick={() => setOpen(true)}
           aria-label="Open menu"
         >
-          <Icon icon="material-symbols:menu" width="24" height="24" />
+          <Icon
+            icon="material-symbols:menu"
+            style={{ color: "black" }}
+            width="24"
+            height="24"
+          />
         </button>
 
         {/* Desktop CTAs */}
@@ -74,49 +79,60 @@ const Header = ({ setModalData }) => {
       </nav>
 
       {/* Right Slide Menu (Mobile) */}
-      <div className={`mobile-drawer d-md-none ${open ? "open" : ""}`}>
-        <button
-          className="close-btn"
-          onClick={() => setOpen(false)}
-        >
-          ✕
-        </button>
+      <div className={`mobile-drawer p-3 d-md-none ${open ? "open" : ""}`}>
+        <div className="d-flex justify-content-between align-items-center">
+          <Image
+            src="/logo.png"
+            alt="malbros-logo"
+            className="logo"
+            width={190}
+            height={40}
+            priority
+          />
+          <div onClick={() => setOpen(false)}>
+            <Icon icon="radix-icons:cross-2" width="22" height="22"  style={{color:"grey"}} />
+          </div>
+        </div>
 
-        <button
-          type="button"
-          className="primary-button w-100 mb-3"
-          data-bs-toggle="modal"
-          data-bs-target="#contactModal"
-          onClick={() => {
-            setOpen(false);
-            setModalData({
-              isJob: false,
-              source: "Header Contact CTA",
-            });
-          }}
-        >
-          Contact Us
-        </button>
+        <div className="my-5">
+          <button
+            type="button"
+            className="primary-button w-100 mb-3"
+            data-bs-toggle="modal"
+            data-bs-target="#contactModal"
+            onClick={() => {
+              setOpen(false);
+              setModalData({
+                isJob: false,
+                source: "Header Contact CTA",
+              });
+            }}
+          >
+            Contact Us
+          </button>
 
-        <button
-          type="button"
-          className="secondary-button w-100"
-          data-bs-toggle="modal"
-          data-bs-target="#contactModal"
-          onClick={() => {
-            setOpen(false);
-            setModalData({
-              isJob: true,
-              source: "Header Apply CTA",
-            });
-          }}
-        >
-          Jobs at Malbros
-        </button>
+          <button
+            type="button"
+            className="secondary-button w-100"
+            data-bs-toggle="modal"
+            data-bs-target="#contactModal"
+            onClick={() => {
+              setOpen(false);
+              setModalData({
+                isJob: true,
+                source: "Header Apply CTA",
+              });
+            }}
+          >
+            Jobs at Malbros
+          </button>
+        </div>
       </div>
 
       {/* Backdrop */}
-      {open && <div className="drawer-backdrop" onClick={() => setOpen(false)} />}
+      {open && (
+        <div className="drawer-backdrop" onClick={() => setOpen(false)} />
+      )}
 
       <hr className="m-0" />
     </header>

@@ -16,11 +16,11 @@ import { useState } from "react";
 import ContactFormModal from "./components/ContactFormModal";
 
 const logos = [
-  "/partnerLogos/logo4.png",
-  "/partnerLogos/logo1.png",
-  "/partnerLogos/logo2.png",
+  "/partnerLogos/logo4.webp",
+  "/partnerLogos/logo1.webp",
+  "/partnerLogos/logo2.webp",
   "/partnerLogos/logo3.webp",
-  "/partnerLogos/logo5.png",
+  "/partnerLogos/logo5.webp",
 ];
 
 const PROJECTS_DATA = [
@@ -282,13 +282,13 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="my-5 py-4">
+      <div className="my-5">
         <Swiper
           modules={[Autoplay]}
           loop={true}
           centeredSlides={false}
-          slidesPerView={3} // roughly 4 visible slides
-          spaceBetween={50}
+          slidesPerView={1.6} // roughly 4 visible slides
+          spaceBetween={20}
           speed={6000} // higher = slower continuous motion
           autoplay={{
             delay: 1, // continuous effect
@@ -300,7 +300,8 @@ export default function Home() {
           className="brand-marquee d-flex justify-content-center align-items-center"
           breakpoints={{
             768: {
-              slidesPerView: 4,
+              slidesPerView: 3.9,
+              spaceBetween: 45,
             },
           }}
         >
@@ -309,8 +310,8 @@ export default function Home() {
               key={i}
               className="h-100 d-flex justify-content-center align-items-center"
             >
-              <div className="d-flex justify-content-center align-items-center">
-                <img src={src} alt={`logo-${i}`} className="col-12 col-md-6" />
+              <div className="d-flex justify-content-center align-items-center px-lg-3">
+                <img src={src} alt={`logo-${i}`} className="img-fluid" />
               </div>
             </SwiperSlide>
           ))}
@@ -674,6 +675,19 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="leadership-section">
+        <div className="d-flex justify-content-center container py-5">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d219.3300852592198!2d77.28308732096656!3d28.51929230998862!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce14ba115d61b%3A0x3b032b8fffdcc574!2sDLF%20Prime%20Towers!5e0!3m2!1sen!2sin!4v1772173439056!5m2!1sen!2sin"
+            width="100%"
+            height="450"
+            allowfullscreen=""
+            style={{ borderRadius: "15px" }}
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
       <div className="leadership-section mb-md-5 py-5 px-md-5 px-3">
         <div className="d-flex justify-content-center w-100">
           <div className="w-100 leadership-container">
@@ -896,7 +910,8 @@ export default function Home() {
         slides={activeSlides}
         index={activeSlideIndex}
         on={{ view: ({ index }) => setActiveSlideIndex(index) }}
-      />
+      >
+      </Lightbox>
       <ContactFormModal modalData={modalData} />
 
       <Footer />
