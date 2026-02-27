@@ -102,7 +102,7 @@ a {
 .divider {
   width: 1px;
   background-color: black;
-  height: -webkit-fill-available;
+  align-self: stretch;
 }
 
 .counter {
