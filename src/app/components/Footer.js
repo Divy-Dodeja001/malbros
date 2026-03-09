@@ -61,7 +61,7 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-            <div className="d-lg-none">
+            <div className="d-lg-none p-1">
               <h6 className="mb-1">Contact Us</h6>
               <a href="mailto:info@malbrosfurnitures.com">
                 <small>
