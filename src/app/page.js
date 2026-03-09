@@ -129,6 +129,58 @@ const PROJECTS_DATA = [
       "/projects/LTMumbai/9.webp",
     ],
   },
+
+  {
+    id: "orchid-mussorie",
+    title: "Orchid Mussorie",
+    cover: "/projects/orchidMussorie.png",
+    gallery: [
+      "/projects/orchidMussorie/1.webp",
+      "/projects/orchidMussorie/2.webp",
+      "/projects/orchidMussorie/3.webp",
+      "/projects/orchidMussorie/4.webp",
+      "/projects/orchidMussorie/5.webp",
+    ],
+  },
+
+  {
+    id: "lemon-tree-pune",
+    title: "Lemon Tree Premier, Pune",
+    cover: "/projects/LTPune.jpg",
+    gallery: [
+      "/projects/LTPune/1.webp",
+      "/projects/LTPune/2.webp",
+      "/projects/LTPune/3.webp",
+      "/projects/LTPune/4.webp",
+      "/projects/LTPune/5.webp",
+      "/projects/LTPune/6.webp",
+      "/projects/LTPune/7.webp",
+      "/projects/LTPune/8.webp",
+      "/projects/LTPune/9.webp",
+    ],
+  },
+
+  {
+    id: "Radisson-Indore",
+    title: "Radisson Indore",
+    cover: "/projects/radissonIndore.jpg",
+    gallery: [
+      "/projects/radissonIndore/1.webp",
+      "/projects/radissonIndore/2.webp",
+      "/projects/radissonIndore/3.webp",
+    ],
+  },
+
+  {
+    id: "LTGurugram",
+    title: "Lemon Tree Gurugram",
+    cover: "/projects/LTGurugram.jpg",
+    gallery: [
+      "/projects/LTGurugram/1.webp",
+      "/projects/LTGurugram/2.webp",
+      "/projects/LTGurugram/3.webp",
+    ],
+  },
 ];
 
 export default function Home() {
@@ -269,7 +321,7 @@ export default function Home() {
           <div className="divider"></div>
           <div className="p-md-5 p-4  w-100">
             <h4 className="counter">
-              {inView && <CountUp end={100} duration={4} />}+
+              {inView && <CountUp end={75} duration={4} />}+
             </h4>
             <p className="m-0">projects delivered</p>
           </div>
@@ -406,7 +458,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div>
+            <div className="">
               <Swiper
                 modules={[Autoplay, Pagination]}
                 autoplay={{ delay: 2800, disableOnInteraction: false }}
@@ -417,7 +469,7 @@ export default function Home() {
                 spaceBetween={15}
                 breakpoints={{
                   768: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                     spaceBetween: 24,
                     allowTouchMove: true, // disable dragging/swiping on desktop
                   },
@@ -425,30 +477,6 @@ export default function Home() {
                 allowTouchMove={true} // enabled for mobile by default
                 className="secondarySwiper leadership-swiper"
               >
-                <SwiperSlide className="rounded-2 service-card mb-4">
-                  <div className="mb-3">
-                    <img
-                      src="/services/fall-ceiling.jpg"
-                      alt="services"
-                      className="w-100"
-                      style={{
-                        height: "auto",
-                        objectFit: "cover",
-                        borderTopLeftRadius: "7px",
-                        borderTopRightRadius: "7px",
-                      }}
-                    />
-                  </div>
-                  <div className="p-3 services-body-div">
-                    <h5 className="mb-2 primary-color">
-                      False Ceilings, Partitions & Panelling
-                    </h5>
-                    <p className="mb-0">
-                      Structural elements that shape how a space looks and
-                      feels, executed for durability and precision.
-                    </p>
-                  </div>
-                </SwiperSlide>
                 <SwiperSlide className="rounded-2 service-card mb-4">
                   <div className="mb-3">
                     <img
@@ -465,7 +493,7 @@ export default function Home() {
                   </div>
                   <div className="p-3 services-body-div">
                     <h5 className="mb-2 primary-color">
-                      Bespoke Loose Furniture
+                      Bespoke Loose & Fixed Furniture
                     </h5>
                     <p className="mb-0">
                       Custom-built, high-quality furniture designed to fit
@@ -619,6 +647,24 @@ export default function Home() {
                 <SwiperSlide className="">
                   <div className="mb-3">
                     <img
+                      src="/in-house-strength/3.jpg"
+                      alt="in-house-strength"
+                      className="w-100 rounded-2"
+                      style={{ height: "auto", objectFit: "cover" }}
+                    />
+                  </div>
+                  <div>
+                    <h5 className="">Contractor Network</h5>
+                    <p>
+                      A reliable network of contractors and site supervisors
+                      that ensures seamless execution of large-scale projects,
+                      on time and to specification.
+                    </p>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="">
+                  <div className="mb-3">
+                    <img
                       src="/in-house-strength/1.jpg"
                       alt="in-house-strength"
                       className="w-100 rounded-2"
@@ -652,24 +698,6 @@ export default function Home() {
                     </p>
                   </div>
                 </SwiperSlide>
-                <SwiperSlide className="">
-                  <div className="mb-3">
-                    <img
-                      src="/in-house-strength/3.jpg"
-                      alt="in-house-strength"
-                      className="w-100 rounded-2"
-                      style={{ height: "auto", objectFit: "cover" }}
-                    />
-                  </div>
-                  <div>
-                    <h5 className="">Contractor Network</h5>
-                    <p>
-                      A reliable network of contractors and site supervisors
-                      that ensures seamless execution of large-scale projects,
-                      on time and to specification.
-                    </p>
-                  </div>
-                </SwiperSlide>
               </Swiper>
             </div>
           </div>
@@ -697,7 +725,7 @@ export default function Home() {
             </h6>
           </div>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d219.3300852592198!2d77.28308732096656!3d28.51929230998862!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce14ba115d61b%3A0x3b032b8fffdcc574!2sDLF%20Prime%20Towers!5e0!3m2!1sen!2sin!4v1772173439056!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d438.24479175696916!2d77.49425362638311!3d28.510901282946733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cebb89c82407d%3A0x4758c87dc1c77593!2sMalbros%20Furnitures!5e0!3m2!1sen!2sin!4v1773038016950!5m2!1sen!2sin"
             width="100%"
             height="450"
             allowfullscreen=""
@@ -787,7 +815,7 @@ export default function Home() {
 
                       <div className="leader-body">
                         <h5 className="leader-name">Mr. Akkshat Malhotraa</h5>
-                        <div className="leader-role">Director</div>
+                        <div className="leader-role">COO</div>
                         <p className="leader-bio">
                           Akkshat Malhotraa brings fresh perspective and
                           operational expertise to Malbros. His focus on
@@ -804,7 +832,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="my-md-5 py-3 px-md-5 px-3">
+      {/* <div className="my-md-5 py-3 px-md-5 px-3">
         <div
           className="d-flex align-items-center justify-content-center mb-4"
           style={{ gap: "0.7em" }}
@@ -922,7 +950,7 @@ export default function Home() {
             </SwiperSlide>
           </Swiper>
         </div>
-      </div>
+      </div> */}
       <Lightbox
         open={open}
         close={() => setOpen(false)}
