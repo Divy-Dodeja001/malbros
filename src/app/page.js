@@ -654,11 +654,11 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h5 className="">Contractor Network</h5>
+                    <h5 className="">Manufacturing Facility</h5>
                     <p>
-                      A reliable network of contractors and site supervisors
-                      that ensures seamless execution of large-scale projects,
-                      on time and to specification.
+                      A modern, in-house factory equipped with advanced
+                      woodworking and finishing machinery, now expanding to meet
+                      growing demand with higher efficiency and scale.
                     </p>
                   </div>
                 </SwiperSlide>
@@ -672,11 +672,11 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h5 className="">Manufacturing Facility</h5>
+                    <h5 className="">Carpentry Team</h5>
                     <p>
-                      A modern, in-house factory equipped with advanced
-                      woodworking and finishing machinery, now expanding to meet
-                      growing demand with higher efficiency and scale.
+                      A strong pool of skilled carpenters and craftsmen who
+                      bring precision, detail, and artistry to every bespoke
+                      piece.
                     </p>
                   </div>
                 </SwiperSlide>
@@ -690,11 +690,11 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <h5 className="">Carpentry Team</h5>
+                    <h5 className="">Contractor Network</h5>
                     <p>
-                      A strong pool of skilled carpenters and craftsmen who
-                      bring precision, detail, and artistry to every bespoke
-                      piece.
+                      A reliable network of contractors and site supervisors
+                      that ensures seamless execution of large-scale projects,
+                      on time and to specification.
                     </p>
                   </div>
                 </SwiperSlide>

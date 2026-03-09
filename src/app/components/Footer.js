@@ -21,23 +21,23 @@ const Footer = () => {
           </div>
         </div>
         <div className="d-md-flex justify-content-between w-100">
-          <div className="mb-4">
+          <div className="mb-5 mb-md-4">
             <h5 className="mb-2">Creating luxury, Crafting Perfection</h5>
           </div>
           <div className="col-md-3">
             <div className="d-none d-md-block">
-              <h6 className="mb-2">Contact Us</h6>
-              <a href="mailto:hello@yourbrandname.com">
+              <h6 className="mb-1">Contact Us</h6>
+              <a href="mailto:info@malbrosfurnitures.com">
                 <small>
                   <span className="">Email: </span>
-                  hello@yourbrandname.com
+                  info@malbrosfurnitures.com
                 </small>
               </a>
             </div>
           </div>
           <div className="col-md-3">
-            <div className="">
-              <h6 className="mb-2">
+            <div className="mb-4">
+              <h6 className="mb-1">
                 <Icon
                   icon="lsicon:location-outline"
                   width="22"
@@ -62,17 +62,11 @@ const Footer = () => {
               </div>
             </div>
             <div className="d-lg-none">
-              <h6 className="mb-2">Contact Us</h6>
-              <a href="mailto:hello@yourbrandname.com">
+              <h6 className="mb-1">Contact Us</h6>
+              <a href="mailto:info@malbrosfurnitures.com">
                 <small>
                   <span className="">Email: </span>
-                  hello@yourbrandname.com
-                </small>
-              </a>
-              <br></br>
-              <a href="tel:+919876543210">
-                <small>
-                  <span className="">Phone: </span>+919876543210
+                  info@malbrosfurnitures.com
                 </small>
               </a>
             </div>
