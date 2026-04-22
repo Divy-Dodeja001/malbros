@@ -249,9 +249,9 @@ export default function Home() {
               >
                 <div className="d-flex w-100 justify-content-center">
                   <div className="text-light text-center px-3">
-                    <h1 className="fw-bold">
+                    <h2 className="fw-bold">
                       Where Craftsmanship Meets Capability
-                    </h1>
+                    </h2>
                     <p>
                       Combining manufacturing expertise with strong quality
                       control across every project.
@@ -282,7 +282,7 @@ export default function Home() {
               >
                 <div className="d-flex w-100 justify-content-center">
                   <div className="text-light text-center px-3">
-                    <h1 className="fw-bold">Execution You Can Depend On</h1>
+                    <h2 className="fw-bold">Execution You Can Depend On</h2>
                     <p>
                       Trusted by industry leaders to provide end-to-end
                       execution and project management.
@@ -402,9 +402,9 @@ export default function Home() {
                 </h6>
               </div>
               <div className="mb-md-5">
-                <h3 className="mb-3 mb-md-5 fw-bold">
+                <h2 className="mb-3 mb-md-5 fw-bold">
                   The Makers Behind Exceptional Spaces
-                </h3>
+                </h2>
                 <p>
                   Based in Delhi and shaped by over seventeen years of
                   experience, Malbros Furnitures is a leading interior

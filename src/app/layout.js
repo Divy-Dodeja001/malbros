@@ -1,17 +1,24 @@
 import "./globals.css";
-
+import Script from "next/script";
 import { Manrope } from "next/font/google";
 
 const manrope = Manrope({
-  subsets: ["latin"], // choose character sets
-  variable: "--font-manrope", // optional CSS variable
-  weight: ["400", "500", "600", "700"], // pick the weights you need
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata = {
-  title: "Malbros Furnitures",
+  metadataBase: new URL("https://www.malbrosfurnitures.com/"),
+  title: "Malbros Furnitures | Luxury & Bespoke Furniture in Delhi",
   description:
-    "Based in Delhi and shaped by over seventeen years of experience, Malbros Furnitures is a leading interior contracting and bespoke furniture manufacturing firm that delivers turnkey interiors and bespoke furniture for hospitality, corporate, healthcare, and luxury residences.",
+    "Explore Malbros Furnitures for premium bespoke furniture, modular kitchens, wardrobes & interior solutions.",
+  alternates: {
+    canonical: "https://www.malbrosfurnitures.com/",
+  },
+  verification: {
+    google: "nFGdVsIzJtEI-1XfNJNdmGHgSBh8WKy3DaLE1tLRNY4",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -22,19 +29,38 @@ export default function RootLayout({ children }) {
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           rel="stylesheet"
-          integrity=""
           crossOrigin="anonymous"
         />
-        <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
       </head>
-      <body className={`${manrope.variable}`}>
+
+      <body className={manrope.variable}>
         {children}
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-1JP2YHQM0L"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-1JP2YHQM0L');
+          `}
+        </Script>
+
         {/* Bootstrap JS */}
-        <script
+        <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           strategy="afterInteractive"
         />
-        <script src="bower_components/aos/dist/aos.js"></script>
+
+        {/* AOS (optional fix below) */}
+        <Script
+          src="/aos.js" // ⚠️ better to host locally or via CDN
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
