@@ -142,6 +142,10 @@ a {
 .service-card {
   background: #ffffff;
   border-radius: 16px;
+  max-width: 450px;
+}
+
+.service-card-div{
 }
 
 /* ===== Leadership Section (Modern, subtle, premium) ===== */

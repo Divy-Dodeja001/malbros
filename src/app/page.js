@@ -458,71 +458,78 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="">
+            <div className=" d-md-flex justify-content-center">
               <Swiper
                 modules={[Autoplay, Pagination]}
                 autoplay={{ delay: 2800, disableOnInteraction: false }}
-                pagination={{ clickable: true }}
-                loop={true}
+                pagination={{ clickable: false }}
+                loop={false}
                 speed={2000}
                 slidesPerView={1.2}
                 spaceBetween={15}
                 breakpoints={{
                   768: {
+                    autoplay:true,
+                    pagination: true,
                     slidesPerView: 2,
                     spaceBetween: 24,
-                    allowTouchMove: true, // disable dragging/swiping on desktop
+                    allowTouchMove: true,
+                    loop:true // disable dragging/swiping on desktop
                   },
                 }}
                 allowTouchMove={true} // enabled for mobile by default
                 className="secondarySwiper leadership-swiper"
               >
                 <SwiperSlide className="rounded-2 service-card mb-4">
-                  <div className="mb-3">
-                    <img
-                      src="/services/furniture.jpg"
-                      alt="services"
-                      className="w-100"
-                      style={{
-                        height: "auto",
-                        objectFit: "cover",
-                        borderTopLeftRadius: "7px",
-                        borderTopRightRadius: "7px",
-                      }}
-                    />
-                  </div>
-                  <div className="p-3 services-body-div">
-                    <h5 className="mb-2 primary-color">
-                      Bespoke Loose & Fixed Furniture
-                    </h5>
-                    <p className="mb-0">
-                      Custom-built, high-quality furniture designed to fit
-                      luxury spaces perfectly.
-                    </p>
+                  <div className="service-card-div">
+                    <div className="mb-3">
+                      <img
+                        src="/services/furniture.jpg"
+                        alt="services"
+                        className="w-100"
+                        style={{
+                          height: "auto",
+                          objectFit: "cover",
+                          borderTopLeftRadius: "7px",
+                          borderTopRightRadius: "7px",
+                        }}
+                      />
+                    </div>
+                    <div className="p-3 services-body-div">
+                      <h5 className="mb-2 primary-color">
+                        Bespoke Loose & Fixed Furniture
+                      </h5>
+                      <p className="mb-0">
+                        Custom-built, high-quality furniture designed to fit
+                        luxury spaces perfectly.
+                      </p>
+                    </div>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="rounded-2 service-card mb-4">
-                  <div className="mb-3">
-                    <img
-                      src="/services/interior-solutions.jpg"
-                      alt="services"
-                      className="w-100"
-                      style={{
-                        height: "auto",
-                        objectFit: "cover",
-                        borderTopLeftRadius: "7px",
-                        borderTopRightRadius: "7px",
-                      }}
-                    />
-                  </div>
-                  <div className="p-3 services-body-div">
-                    <h5 className="mb-2 primary-color">
-                      Turnkey Interior Solutions
-                    </h5>
-                    <p className="mb-0">
-                      Project delivery from design to execution, ensuring a
-                      seamless process and timely completion.
-                    </p>
+                  <div className="service-card-div">
+                    <div className="mb-3">
+                      <img
+                        src="/services/interior-solutions.jpg"
+                        alt="services"
+                        className="w-100"
+                        style={{
+                          height: "auto",
+                          objectFit: "cover",
+                          borderTopLeftRadius: "7px",
+                          borderTopRightRadius: "7px",
+                        }}
+                      />
+                    </div>
+                    <div className="p-3 services-body-div">
+                      <h5 className="mb-2 primary-color">
+                        Turnkey Interior Solutions
+                      </h5>
+                      <p className="mb-0">
+                        Project delivery from design to execution, ensuring a
+                        seamless process and timely completion.
+                      </p>
+                    </div>
                   </div>
                 </SwiperSlide>
               </Swiper>
