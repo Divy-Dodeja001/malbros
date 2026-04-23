@@ -12,7 +12,7 @@ export const metadata = {
   metadataBase: new URL("https://www.malbrosfurnitures.com/"),
   title: "Malbros Furnitures | Luxury & Bespoke Furniture in Delhi",
   description:
-    "Explore Malbros Furnitures for premium bespoke furniture, modular kitchens, wardrobes & interior solutions.",
+    "Explore Malbros Furnitures for premium bespoke furniture, modular kitchens, wardrobes & interior solutions. Crafted with quality, style & precision for modern homes.",
   alternates: {
     canonical: "https://www.malbrosfurnitures.com/",
   },
